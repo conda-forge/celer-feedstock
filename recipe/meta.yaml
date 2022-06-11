@@ -1,5 +1,5 @@
 {% set name = "celer" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/celer-{{ version }}.tar.gz
-  sha256: 0a726e120f09dfdba871efa8f93c9d3db218b8926c20362a9d36022e3fc44ea6
+  sha256: 7d8ce687a49926a8b36b8e1b7c4603968356cce651739d67602c9e6d0408892c
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
