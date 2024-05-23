@@ -11,11 +11,12 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -26,7 +27,6 @@ requirements:
   run:
     - python
     - cython >=0.26
-    - {{ pin_compatible('numpy') }}
     - scipy >=0.18.0
     - scikit-learn >=1.0
     - matplotlib-base >=2.0.0
