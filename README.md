@@ -9,6 +9,8 @@ Package license: BSD-3-Clause
 
 Summary: Fast algorithm with dual extrapolation for sparse problems
 
+Development: https://github.com/mathurinm/celer
+
 Current build status
 ====================
 
