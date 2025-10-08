@@ -20,6 +20,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - cython >=0.26
     - numpy
     - scipy >=0.18.0
