@@ -1,5 +1,5 @@
 {% set name = "celer" %}
-{% set version = "0.7.3" %}
+{% set version = "0.7.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/celer-{{ version }}.tar.gz
-  sha256: 6951fe67bb7dbc8e50a6f58743af085d2139749a4cbb97593d77f579888ca100
+  sha256: 2e3e65b5218eb2455155f3c54d2c6b33b486fd113b67fbe1f31723fe1ec14363
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 4
+  number: 0
 
 requirements:
   build:
@@ -26,15 +26,13 @@ requirements:
     - scikit-learn >=1.0
   run:
     - python
-    - cython >=0.26
-    - scipy >=0.18.0
-    - scikit-learn >=1.0
-    - matplotlib-base >=2.0.0
-    - seaborn >=0.7
-    - tqdm
-    - xarray
     - download
     - libsvmdata >=0.3
+    - matplotlib-base >=2.0.0
+    - seaborn >=0.7
+    - scikit-learn >=1.0
+    - tqdm
+    - xarray
 
 test:
   imports:
@@ -46,6 +44,7 @@ test:
 
 about:
   home: https://mathurinm.github.io/celer
+  dev_url: https://github.com/mathurinm/celer
   summary: Fast algorithm with dual extrapolation for sparse problems
   license: BSD-3-Clause
   license_file: LICENSE
