@@ -1,22 +1,22 @@
-{% set name = "celer" %}
-{% set version = "0.7.4" %}
+context:
+  version: "0.7.4"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: celer
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/celer-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/c/celer/celer-${{ version }}.tar.gz
   sha256: 2e3e65b5218eb2455155f3c54d2c6b33b486fd113b67fbe1f31723fe1ec14363
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
   host:
     - python
     - pip
@@ -35,17 +35,15 @@ requirements:
     - tqdm
     - xarray
 
-test:
-  imports:
-    - celer
-  commands:
-    - pip check
-  requires:
-    - pip
+tests:
+  - python:
+      imports:
+        - celer
+      pip_check: true
 
 about:
-  home: https://mathurinm.github.io/celer
-  dev_url: https://github.com/mathurinm/celer
+  homepage: https://mathurinm.github.io/celer
+  repository: https://github.com/mathurinm/celer
   summary: Fast algorithm with dual extrapolation for sparse problems
   license: BSD-3-Clause
   license_file: LICENSE
