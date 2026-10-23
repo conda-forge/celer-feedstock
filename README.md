@@ -264,4 +264,5 @@ Feedstock Maintainers
 =====================
 
 * [@mfansler](https://github.com/mfansler/)
+* [@ytausch](https://github.com/ytausch/)
 
